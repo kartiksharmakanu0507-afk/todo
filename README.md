@@ -1,36 +1,135 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Todo App
+
+A full-stack Todo application built with **Next.js 16**, **MongoDB**, and **Tailwind CSS**. Supports creating, reading, updating, and deleting tasks via a clean REST API.
+
+---
+
+## Features
+
+- Add new tasks instantly
+- Edit existing tasks inline
+- Delete tasks with one click
+- Persistent storage with MongoDB
+- REST API built with Next.js Route Handlers
+- Responsive UI styled with Tailwind CSS
+
+---
+
+## Tech Stack
+
+| Layer      | Technology                  |
+|------------|-----------------------------|
+| Frontend   | Next.js 16, React 19, TypeScript |
+| Styling    | Tailwind CSS v4             |
+| Backend    | Next.js API Routes          |
+| Database   | MongoDB + Mongoose          |
+| HTTP Client| Axios                       |
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Node.js 18+
+- MongoDB Atlas account (or local MongoDB)
+
+### Setup
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/kartiksharmakanu0507-afk/todo.git
+   cd todo
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Configure environment variables**
+
+   Create a `.env.local` file in the root:
+   ```env
+   MONGO_URI=your_mongodb_connection_string
+   ```
+
+4. **Run the development server**
+   ```bash
+   npm run dev
+   ```
+
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+## Project Structure
+
+```
+todo/
+├── app/
+│   ├── api/
+│   │   └── task/
+│   │       └── route.js       # REST API (GET, POST, PATCH, DELETE)
+│   ├── components/
+│   │   ├── TodoForm.tsx       # Input form + state management
+│   │   └── TodoList.tsx       # Task list rendering
+│   ├── globals.css            # Global styles + Tailwind
+│   ├── layout.tsx             # Root layout
+│   └── page.tsx               # Home page
+├── lib/
+│   └── db.js                  # MongoDB connection
+├── Model/
+│   └── task.js                # Mongoose Task schema
+└── package.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## API Reference
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Method | Endpoint    | Description         |
+|--------|-------------|---------------------|
+| GET    | `/api/task` | Fetch all tasks     |
+| POST   | `/api/task` | Create a new task   |
+| PATCH  | `/api/task` | Update a task by ID |
+| DELETE | `/api/task` | Delete a task by ID |
 
-## Learn More
+### Request body examples
 
-To learn more about Next.js, take a look at the following resources:
+**POST** — `{ "text": "Buy groceries" }`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**PATCH** — `{ "id": "<task_id>", "text": "Updated text" }`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**DELETE** — `{ "id": "<task_id>" }`
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Scripts
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run dev      # Start development server
+npm run build    # Build for production
+npm run start    # Start production server
+npm run lint     # Run ESLint
+```
+
+---
+
+## Deployment
+
+Deploy easily on [Vercel](https://vercel.com). Set the `MONGO_URI` environment variable in your Vercel project settings.
+
+---
+
+## Contributors
+
+| Name            | GitHub                                                       |
+|-----------------|--------------------------------------------------------------|
+| Kartik Sharma   | [@kartiksharmakanu0507-afk](https://github.com/kartiksharmakanu0507-afk) |
+
+---
+
+## License
+
+MIT
