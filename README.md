@@ -1,6 +1,6 @@
 # Todo App
 
-[![View on GitHub](https://img.shields.io/badge/View%20on-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/kartiksharmakanu0507-afk/todo)
+[![View on GitHub](https://img.shields.io/badge/View%20on-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/kartiksharmakanu0507-afk/todo) [![Local Dev](https://img.shields.io/badge/Local-localhost%3A3000-blue?style=for-the-badge)](http://localhost:3000)
 
 A full-stack Todo application built with **Next.js 16**, **MongoDB**, and **Tailwind CSS**. Supports creating, reading, updating, and deleting tasks via a clean REST API.
 
